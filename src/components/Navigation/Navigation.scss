@@ -1,0 +1,38 @@
+.navigation-wrapper {
+    &.ant-menu {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(55, 81, 126);
+        color: #fff;
+
+        .ant-menu-item {
+            .item-title {
+                font-size: 20px;
+                color: #fff;
+
+                &:hover {
+                    color: rgb(0, 185, 255);
+                }
+            }
+
+            &:hover {
+                .ant-menu-item-icon {
+                    color: rgb(0, 185, 255);
+                    border-color: rgb(0, 185, 255);
+                }
+            }
+        }
+
+        .ant-menu-item-selected {
+            .ant-menu-item-icon {
+                color: rgb(0, 185, 255);
+                border-color: rgb(0, 185, 255);
+            }
+
+            .item-title {
+                color: rgb(0, 185, 255);
+            }
+        }
+    }
+}
