@@ -7,7 +7,7 @@ npm start
 
 # Open Api 
 
-For convert currency used api from https://free.currencyconverterapi.com/. Limit is 100 requests per 1 hour.__
+For convert currency used api from https://free.currencyconverterapi.com/. Limit is 100 requests per 1 hour.<br />
 apiKey set in /src/utils/requests.js 
 
 ```
