@@ -6,8 +6,7 @@ const Routes = () => {
     const routes = PATHES.map((path, index) => {
         const { to } = path;
 
-        return (<Route key={index} exact path={to} component={to === "/rates" ? Rates : Converter} />
-        )
+        return <Route key={index} exact path={to} component={to === "/rates" ? Rates : Converter} />
     });
 
     return (

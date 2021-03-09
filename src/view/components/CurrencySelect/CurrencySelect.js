@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Select, Spin } from "antd";
 
 const { Option } = Select;
 
-const CurrencySelect = React.memo(({ isFetchingList, currenciesList, value, onChange }) => {
+const CurrencySelect = React.memo(({ isFetchingList, currenciesList = [], value, onChange }) => {
     let currenciesOptions;
 
-    if (isFetchingList) {
-        currenciesOptions = <Option value="loading"><Spin /></Option>
-    } else {
-        currenciesOptions = (currenciesList || []).map(currency => {
-            const { id } = currency;
+    currenciesOptions = useMemo(() => {
+        if (isFetchingList) {
+            return <Option value="loading"><Spin /></Option>;
+        } else {
+            return currenciesList.map(currency => {
+                const { id } = currency;
 
-            return <Option key={id} value={id}>{id}</Option>;
-        });
-    }
+                return <Option key={id} value={id}>{id}</Option>;
+            })
+        };
+    }, [currenciesList, isFetchingList])
 
     return (
         <Select
