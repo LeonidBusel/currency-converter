@@ -4,7 +4,9 @@ import rootSagas from '@sagas';
 import { reducers } from '@slice';
 
 let sagaMiddleware = createSagaMiddleware();
-const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
+const middleware = [...getDefaultMiddleware({
+  thunk: false
+}), sagaMiddleware];
 
 const store = configureStore({
   reducer: reducers,

@@ -1,5 +1,4 @@
 import { flags } from "@utils/flag";
-import { RateTableTitle } from "@components";
 
 export const parseConvertToTableData = (multipleConvertInfo = []) => {
     const columns = [];
@@ -14,7 +13,7 @@ export const parseConvertToTableData = (multipleConvertInfo = []) => {
             const currencyCode = splitKey[0];
             const colKey = currencyCode.toLowerCase();
 
-            colObj.title = <RateTableTitle imgSrc={flags[currencyCode]} title={currencyCode}/>;
+            colObj.title = { imgSrc: flags[currencyCode], title: currencyCode };
             colObj.key = colKey;
             colObj.dataIndex = colKey;
 
