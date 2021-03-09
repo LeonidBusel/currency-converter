@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { multipleConvertFetch, multipleConvertFetchSuccess, multipleConvertFetchFail } from '@actions/multipleConvertAction';
+import { multipleConvertFetch, multipleConvertFetchSuccess, multipleConvertFetchFail } from '@slice/multipleConvertSlice';
 import { multipleConvert } from '@utils/requests';
 import { parseConvertToTableData } from "@utils/helper";
 

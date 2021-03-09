@@ -1,13 +1,13 @@
 import { fork, all } from 'redux-saga/effects';
 import listCurrenciesSaga from './listCurrenciesSaga';
-import convertCurrencySaga from './convertCurrencySaga';
+import convertSaga from './convertSaga';
 import multipleConvertSaga from './multipleConvertSaga';
 import geoLocationSaga from './geoLocationSaga';
 
-export default function* () {
+export default function* rootSaga() {
   yield all([
     fork(listCurrenciesSaga),
-    fork(convertCurrencySaga),
+    fork(convertSaga),
     fork(multipleConvertSaga),
     fork(geoLocationSaga)
   ]);

@@ -3,13 +3,13 @@ import { Select, Spin } from "antd";
 
 const { Option } = Select;
 
-const CurrencySelect = React.memo(({ isFetchingList, listCurrencies, value, onChange }) => {
+const CurrencySelect = React.memo(({ isFetchingList, currenciesList, value, onChange }) => {
     let currenciesOptions;
 
     if (isFetchingList) {
         currenciesOptions = <Option value="loading"><Spin /></Option>
     } else {
-        currenciesOptions = (listCurrencies || []).map(currency => {
+        currenciesOptions = (currenciesList || []).map(currency => {
             const { id } = currency;
 
             return <Option key={id} value={id}>{id}</Option>;

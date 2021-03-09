@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Input } from "antd";
 import { CurrencySelect } from "@components";
 
-const AmountInput = ({ value = {}, onChange, listCurrencies, isFetchingList }) => {
+const AmountInput = ({ value = {}, onChange, currenciesList, isFetchingList }) => {
   const [number, setNumber] = useState(0);
   const [currencyFrom, setCurrencyFrom] = useState('USD');
   const [currencyTo, setCurrencyTo] = useState('USD');
@@ -68,13 +68,13 @@ const AmountInput = ({ value = {}, onChange, listCurrencies, isFetchingList }) =
 
       <CurrencySelect
         isFetchingList={isFetchingList}
-        listCurrencies={listCurrencies}
+        currenciesList={currenciesList}
         value={(isFetchingList && "loading") || value.currencyFrom || currencyFrom}
         onChange={onCurrencyFromChange} />
 
       <CurrencySelect
         isFetchingList={isFetchingList}
-        listCurrencies={listCurrencies}
+        currenciesList={currenciesList}
         value={(isFetchingList && "loading") || value.currencyTo || currencyTo}
         onChange={onCurrencyToChange} />
 

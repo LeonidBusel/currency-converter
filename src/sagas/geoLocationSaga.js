@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { geoLocationFetch, geoLocationFetchSuccess, geoLocationFetchFail } from '@actions/geoLocationAction';
+import { geoLocationFetch, geoLocationFetchSuccess, geoLocationFetchFail } from '@slice/geoLocationSlice';
 import { getGeoInfo } from '@utils/requests';
 
 function* geoLocationSaga() {

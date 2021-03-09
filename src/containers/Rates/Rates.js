@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { multipleConvertFetch, multipleConvertClear } from '@actions/multipleConvertAction';
+import { multipleConvertFetch, multipleConvertClear } from '@slice/multipleConvertSlice';
 import { Form, Card, Button } from "antd";
 import { RatesTable, CurrencySelect } from "@components";
 import { MAJOR_CURRENCIES } from "@utils/consts";
@@ -12,8 +12,8 @@ const Rates = (props) => {
     const [form] = Form.useForm();
     const [currency, setCurrency] = useState('USD');
     
-    const { listCurrencies, multipleConvert, userLocation } = props;
-    const { isFetching, list, isLoad } = listCurrencies;
+    const { currenciesList, multipleConvert, userLocation } = props;
+    const { isFetching, list, isLoad } = currenciesList;
 
     /* update */
     useEffect(() => {
@@ -58,7 +58,7 @@ const Rates = (props) => {
                 <Form.Item name="currencyFrom">
                     <CurrencySelect
                         isFetchingList={isFetching}
-                        listCurrencies={list}
+                        currenciesList={list}
                         value={(isFetching && "loading") || currency}
                         onChange={onCurrencyChange} />
                 </Form.Item>
@@ -79,7 +79,7 @@ const Rates = (props) => {
 
 function mapStateToProps(state) {
     return {
-        listCurrencies: state.listCurrencies,
+        currenciesList: state.currenciesList,
         multipleConvert: state.multipleConvert,
         userLocation: state.geoLocation
     };
@@ -87,8 +87,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        multipleConvertFetch: multipleConvertFetch,
-        multipleConvertClear: multipleConvertClear
+        multipleConvertFetch,
+        multipleConvertClear
     }, dispatch);
 }
 

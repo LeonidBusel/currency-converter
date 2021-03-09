@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { convertCurrencyFetch, convertCurrencyClear } from '@actions/convertCurrencyAction';
+import { convertFetch, convertClear } from '@slice/convertSlice';
 import { Card, Form, Button } from "antd";
 import { AmountInput, ConvertResult } from "@components";
 
@@ -11,7 +11,7 @@ import "./Converter.scss";
 
 const Converter = (props) => {
     const [form] = Form.useForm();
-    const { listCurrencies, convertCurrency, userLocation } = props
+    const { currenciesList, convertCurrency, userLocation } = props
 
     /* update */
     useEffect(() => {
@@ -28,15 +28,15 @@ const Converter = (props) => {
     /* unmount */
     useEffect(() => {
         return () => {
-            props.convertCurrencyClear();
+            props.convertClear();
         }
     }, [])
 
     const onFinish = (values) => {
-        const { convertCurrencyFetch } = props;
+        const { convertFetch } = props;
         const { number, currencyFrom, currencyTo } = values.amount;
 
-        convertCurrencyFetch({ convert: `${currencyFrom}_${currencyTo}`, amount: number });
+        convertFetch({ convert: `${currencyFrom}_${currencyTo}`, amount: number });
     };
 
     const checkPrice = (_, value) => {
@@ -70,10 +70,10 @@ const Converter = (props) => {
                             validator: checkPrice,
                         },
                     ]}>
-                    <AmountInput listCurrencies={listCurrencies.list} isFetchingList={listCurrencies.isFetching} />
+                    <AmountInput currenciesList={currenciesList.list} isFetchingList={currenciesList.isFetching} />
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" disabled={!listCurrencies.isLoad}>
+                    <Button type="primary" htmlType="submit" disabled={!currenciesList.isLoad}>
                         Convert
                         </Button>
                 </Form.Item>
@@ -87,7 +87,7 @@ const Converter = (props) => {
 
 function mapStateToProps(state) {
     return {
-        listCurrencies: state.listCurrencies,
+        currenciesList: state.currenciesList,
         convertCurrency: state.convertCurrency,
         userLocation: state.geoLocation
     };
@@ -95,8 +95,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        convertCurrencyFetch: convertCurrencyFetch,
-        convertCurrencyClear: convertCurrencyClear
+        convertFetch,
+        convertClear
     }, dispatch);
 }
 

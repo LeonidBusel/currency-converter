@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { currenciesListFetch, currenciesListFetchSuccess, currenciesListFetchFail } from '@actions/listCurrenciesAction';
+import { currenciesListFetch, currenciesListFetchSuccess, currenciesListFetchFail } from '@slice/currenciesListSlice';
 import { getListCurrencies } from '@utils/requests';
 
 function* listCurrenciesSaga() {
