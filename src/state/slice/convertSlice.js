@@ -1,12 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+
+export const initialState = {
+    isFetching: false,
+        convert: {},
+        amount: 0
+};
 
 export const convertSlice = createSlice({
     name: 'convert',
-    initialState: {
-        isFetching: false,
-        convert: {},
-        amount: 0
-    },
+    initialState,
     reducers: {
         convertFetch: state => {
             state.isFetching = true;
@@ -14,7 +16,7 @@ export const convertSlice = createSlice({
         convertFetchSuccess: (state, { payload }) => {
             state.isFetching = false;
             state.convert = Object.assign({}, payload.convert);
-            state.amount = payload.amount
+            state.amount = payload.amount;
         },
         convertFetchFail: (state) => {
             state.isFetching = false;
@@ -27,8 +29,8 @@ export const convertSlice = createSlice({
             state.amount = 0;
         }
     }
-})
+});
 
-export const { convertFetch, convertFetchSuccess, convertFetchFail, convertClear } = convertSlice.actions
+export const { convertFetch, convertFetchSuccess, convertFetchFail, convertClear } = convertSlice.actions;
 
-export default convertSlice.reducer
+export default convertSlice.reducer;

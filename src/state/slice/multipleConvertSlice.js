@@ -1,13 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+export const initialState = {
+    isFetching: false,
+    columns: [],
+    dataSource: [],
+    currency: null
+}
+
 export const multipleConvertSlice = createSlice({
     name: 'multipleConvert',
-    initialState: {
-        isFetching: false,
-        columns: [],
-        dataSource: [],
-        currency: null
-    },
+    initialState,
     reducers: {
         multipleConvertFetch: state => {
             state.isFetching = true;

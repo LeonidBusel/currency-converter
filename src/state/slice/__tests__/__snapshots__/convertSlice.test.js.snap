@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convertSlice handle convertClear correctly 1`] = `
+Object {
+  "amount": 0,
+  "convert": Object {},
+  "isFetching": false,
+}
+`;
+
+exports[`convertSlice handle convertFetch correctly 1`] = `
+Object {
+  "amount": 0,
+  "convert": Object {},
+  "isFetching": true,
+}
+`;
+
+exports[`convertSlice handle convertFetchFail correctly 1`] = `
+Object {
+  "amount": 0,
+  "convert": Object {},
+  "isFetching": false,
+}
+`;
+
+exports[`convertSlice handle convertFetchSuccess correctly 1`] = `
+Object {
+  "amount": 55,
+  "convert": Object {
+    "a": 1,
+    "b": 2,
+  },
+  "isFetching": false,
+}
+`;

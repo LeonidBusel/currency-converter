@@ -9,11 +9,7 @@ function* multipleConvertSaga({ payload }) {
 
         const parseData = parseConvertToTableData(response);
 
-        if (response) {
-            yield put(multipleConvertFetchSuccess({ ...parseData, currency: payload.currency }));
-        } else {
-            yield put(multipleConvertFetchFail());
-        }
+        yield put(multipleConvertFetchSuccess({ ...parseData, currency: payload.currency }));
     } catch (exception) {
         yield put(multipleConvertFetchFail());
     }

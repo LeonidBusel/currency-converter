@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`currenciesListSlice handle currenciesListFetch correctly 1`] = `
+Object {
+  "isFetching": true,
+  "isLoad": false,
+  "list": Array [],
+}
+`;
+
+exports[`currenciesListSlice handle currenciesListFetchFail correctly 1`] = `
+Object {
+  "isFetching": false,
+  "isLoad": true,
+  "list": Array [],
+}
+`;
+
+exports[`currenciesListSlice handle currenciesListFetchSuccess correctly 1`] = `
+Object {
+  "isFetching": false,
+  "isLoad": true,
+  "list": Array [
+    1,
+    2,
+  ],
+}
+`;

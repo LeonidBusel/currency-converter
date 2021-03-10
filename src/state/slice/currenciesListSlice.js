@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+export const initialState = {
+    isFetching: false,
+    isLoad: false,
+    list: []
+};
+
 export const currenciesListSlice = createSlice({
     name: 'currenciesList',
-    initialState: {
-        isFetching: false,
-        isLoad: false,
-        list: []
-    },
+    initialState,
     reducers: {
         currenciesListFetch: state => {
             state.isFetching = true;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`geoLocationSlice handle geoLocationFetch correctly 1`] = `
+Object {
+  "currency": null,
+  "isFetching": true,
+  "isLoaded": false,
+}
+`;
+
+exports[`geoLocationSlice handle geoLocationFetchFail correctly 1`] = `
+Object {
+  "currency": null,
+  "isFetching": false,
+  "isLoaded": false,
+}
+`;
+
+exports[`geoLocationSlice handle geoLocationFetchSuccess correctly 1`] = `
+Object {
+  "currency": 55,
+  "isFetching": false,
+  "isLoaded": true,
+}
+`;

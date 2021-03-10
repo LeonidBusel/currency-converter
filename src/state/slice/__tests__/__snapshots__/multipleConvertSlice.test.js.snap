@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`multipleConvertSlice handle multipleConvertClear correctly 1`] = `
+Object {
+  "columns": Array [],
+  "currency": null,
+  "dataSource": Array [],
+  "isFetching": false,
+}
+`;
+
+exports[`multipleConvertSlice handle multipleConvertFetch correctly 1`] = `
+Object {
+  "columns": Array [],
+  "currency": null,
+  "dataSource": Array [],
+  "isFetching": true,
+}
+`;
+
+exports[`multipleConvertSlice handle multipleConvertFetchFail correctly 1`] = `
+Object {
+  "columns": Array [],
+  "currency": null,
+  "dataSource": Array [],
+  "isFetching": false,
+}
+`;
+
+exports[`multipleConvertSlice handle multipleConvertFetchSuccess correctly 1`] = `
+Object {
+  "columns": Array [
+    1,
+    2,
+  ],
+  "currency": 55,
+  "dataSource": Array [
+    3,
+    4,
+  ],
+  "isFetching": false,
+}
+`;
