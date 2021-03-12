@@ -9,7 +9,6 @@ import { Navigation, Routes } from '@components';
 import './App.scss';
 
 const App = (props) => {
-  
   // did mount
   useEffect(() => {
     const { currenciesListFetch, geoLocationFetch } = props;
