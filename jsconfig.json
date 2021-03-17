@@ -6,8 +6,8 @@
       "baseUrl": "./",
       "paths": {
          "@assets/*": ["src/assets/*"],
-         "@components": ["src/view/component/index.js"],
-         "@containers/*": ["src/view/containers/index.js"],
+         "@components": ["src/view/components/index.js"],
+         "@containers": ["src/view/containers/index.js"],
          "@sagas/*": ["src/state/sagas/*"],
          "@slice/*": ["src/state/slice/*"],
          "@store": ["src/state/slice/store.js"],

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import { multipleConvertFetch, multipleConvertClear } from '@slice/multipleConvertSlice';
 import { Form, Card, Button } from "antd";
 import { RatesTable, CurrencySelect } from "@components";
@@ -91,5 +92,13 @@ function mapDispatchToProps(dispatch) {
         multipleConvertClear
     }, dispatch);
 }
+
+Rates.propTypes = {
+    currenciesList: PropTypes.object,
+    multipleConvert: PropTypes.object,
+    userLocation: PropTypes.object,
+    multipleConvertFetch: PropTypes.func.isRequired,
+    multipleConvertClear: PropTypes.func.isRequired
+  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Rates);

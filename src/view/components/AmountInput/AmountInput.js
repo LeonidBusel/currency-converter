@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types";
 import { Input } from "antd";
 import { CurrencySelect } from "@components";
 
@@ -81,5 +82,12 @@ const AmountInput = ({ value = {}, onChange, currenciesList, isFetchingList }) =
     </>
   );
 };
+
+AmountInput.propTypes = {
+  value: PropTypes.object,
+  onChange: PropTypes.func,
+  currenciesList: PropTypes.array,
+  isFetchingList: PropTypes.bool
+}
 
 export default AmountInput;

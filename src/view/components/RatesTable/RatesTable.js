@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Table, Spin } from "antd";
 import { RateTableTitle } from "@components";
 
@@ -19,6 +20,10 @@ const RatesTable = ({ multipleConvert }) => {
     return (
         <Table columns={renderColumns} dataSource={dataSource} pagination={false} />
     )
+}
+
+RatesTable.propTypes = {
+    multipleConvert: PropTypes.object.isRequired
 }
 
 export default RatesTable;

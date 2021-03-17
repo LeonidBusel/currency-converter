@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import PropTypes from "prop-types";
 import { Select, Spin } from "antd";
 
 const { Option } = Select;
@@ -31,6 +32,14 @@ const CurrencySelect = React.memo(({ isFetchingList, currenciesList = [], value,
             {currenciesOptions}
         </Select>
     )
-})
+});
+
+CurrencySelect.propTypes = {
+    isFetchingList: PropTypes.bool.isRequired,
+    currenciesList: PropTypes.array,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func
+
+}
 
 export default CurrencySelect;

@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { convertFetch, convertClear } from '@slice/convertSlice';
-import { Card, Form, Button } from "antd";
+import PropTypes from "prop-types";
 import { AmountInput, ConvertResult } from "@components";
-
+import { convertClear, convertFetch } from '@slice/convertSlice';
+import { Button, Card, Form } from "antd";
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import "./Converter.scss";
+
 
 
 
@@ -99,5 +100,12 @@ function mapDispatchToProps(dispatch) {
         convertClear
     }, dispatch);
 }
+
+Converter.propTypes = {
+    currenciesList: PropTypes.object,
+    convertCurrency: PropTypes.object,
+    userLocation: PropTypes.object,
+    convertFetch: PropTypes.func.isRequired
+  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Converter);

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Spin } from 'antd';
 
 import "./ConvertResult.scss";
@@ -25,6 +26,10 @@ const ConvertResult = ({ convertCurrency }) => {
             </div>}
     </>
     )
+}
+
+ConvertResult.propTypes = {
+    convertCurrency: PropTypes.object.isRequired
 }
 
 export default ConvertResult;
